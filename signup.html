@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+h2 {
+text-align:center;
+color: #2a5291;
+}
+body {font-family: Arial, Helvetica, sans-serif;}
+.container {
+border: 2px solid #f1f1f1;
+padding: 50px 55px;
+width:500px;
+height: 300px;
+margin: auto;
+box-shadow: 2px 4px 1px 4px whitesmoke;
+
+}
+.form-group {
+width:20%;
+margin: auto;
+}
+@media screen and (max-width: 600px) {
+  .container {
+    width: 80%;
+    margin-top: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+
+<h2>LogIn | SignUp</h2>
+<hr>
+<form>
+<div class = container >
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <input id="uname" type="username" class="form-control" name="email" placeholder="Username" required>
+    </div>
+    <br>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+      <input id="password" type="password" class="form-control" name="password" placeholder="Password" required>
+    </div>
+        <div class="form-group">
+<br>
+<br>
+      <input type="submit" onClick="log()" class="btn btn-primary"></button>
+</div>
+   </div>
+   </form>
+   
+ <script>
+
+  function log(form){
+let uname = document.getElementById('uname').value;
+let passwd = document.getElementById('password').value;
+let localUname = localStorage.getItem('user');
+let localPasswd = localStorage.getItem('passwd');
+
+if (uname === '' || passwd === '')  {
+
+  alert('Kindly enter both email and password or create now');
+  
+
+} else if (localUname === null && localPasswd === null ) {
+
+  localStorage.setItem('passwd', passwd);
+  localStorage.setItem('user', uname);
+  alert('new username and password have been set')
+
+}
+else if (uname === localUname && passwd === localPasswd) {
+  window.location.assign('https://github.com/GourabGITHUB/')
+  event.preventDefault();
+}else {
+  alert('invalid username or password');
+}
+
+
+ }
+</script>
+
+   </body>
+  
+</html>
