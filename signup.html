@@ -5,6 +5,10 @@
 <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel = "icon" href =  
+"https://www.freeiconspng.com/thumbs/site-internet-icon/site-internet-icon-29.png" 
+        type = "image/x-icon"> 
+         
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
@@ -12,9 +16,29 @@
 * {
   box-sizing: border-box;
 }
+#headline{
+  margin-top: 2%;
+  text-align:center;
+padding: 2px 4px;
+}
 h2 {
-text-align:center;
 color: #2a5291;
+display: inline;
+  text-shadow: 3px 6px whitesmoke;
+
+
+}
+b{
+  color:#2a5291;
+  font-size: 20px;
+
+}
+#signup{
+display: ;
+}
+
+#login{
+display: ;
 }
 body {font-family: Arial, Helvetica, sans-serif;}
 .container {
@@ -23,7 +47,7 @@ padding: 50px 55px;
 width:500px;
 height: 300px;
 margin: auto;
-box-shadow: 2px 4px 2px 4px whitesmoke;
+box-shadow: 2px 4px 1px 4px whitesmoke;
 
 }
 .form-group {
@@ -41,7 +65,7 @@ margin: auto;
 <body>
 
 
-<h2>LogIn | SignUp</h2>
+<div id="headline"><h2 id="login">LogIn </h2>  <h2 id="signup"> SignUp</h2></div>
 <hr>
 <form>
 <div class = container >
@@ -79,11 +103,11 @@ if (uname === '' || passwd === '')  {
 
   localStorage.setItem('passwd', passwd);
   localStorage.setItem('user', uname);
-  alert('new username and password have been set')
+  alert('new username and password have been set');
 
 }
 else if (uname === localUname && passwd === localPasswd) {
-  window.location.assign('https://github.com/GourabGITHUB/')
+  window.location.assign('file:///C:/Users/GC/Desktop/Web/html.html')
   event.preventDefault();
 }else {
   alert('invalid username or password');
@@ -91,6 +115,18 @@ else if (uname === localUname && passwd === localPasswd) {
 
 
  }
+ window.onload = function func() {
+  let signup = document.getElementById('signup');
+let login = document.getElementById('login');
+
+if (localStorage.getItem('user') === null) {
+     login.style.display = 'none';
+
+  }  else {
+      signup.style.display = 'none';
+
+  }
+}
 </script>
 
    </body>
